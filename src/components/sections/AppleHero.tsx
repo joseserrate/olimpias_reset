@@ -1,13 +1,13 @@
 import React from 'react';
-import { AppleButton, NeuralNetworkBackground } from '@/components/ui';
+import { NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
   return (
     <section className="relative min-h-[100vh] overflow-hidden bg-white">
-      {/* Neural Network Animation */}
+      {/* Neural Network Animation - Behind everything */}
       <NeuralNetworkBackground />
       
-      <div className="relative max-w-[1040px] mx-auto px-6 lg:px-8 z-10" style={{ width: '100%' }}>
+      <div className="relative max-w-[1040px] mx-auto px-6 lg:px-8 z-20" style={{ width: '100%' }}>
         <div className="text-center flex flex-col justify-center min-h-screen py-20" style={{ margin: '0 auto', width: '100%' }}>
           {/* Main Headline */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold leading-[1.05] tracking-[-0.025em]">

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
 
 export const Header: React.FC = () => {
@@ -48,20 +49,27 @@ export const Header: React.FC = () => {
         </div>
       )}
       
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-3">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-xl font-semibold text-[#0B0B0D] hover:text-[#5B3DF5] transition-colors">
-              Olimpias AI
+            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <Image
+                src="/olimpias-logo.png"
+                alt="Olimpias AI"
+                width={300}
+                height={75}
+                className="h-[72px] w-auto"
+                priority
+              />
             </Link>
             
             <nav className="flex items-center gap-6">
-              <Link href="/casos" className="text-sm font-medium text-slate-600 hover:text-[#5B3DF5] transition-colors">
+              <Link href="/casos" className="text-sm font-medium text-slate-700 hover:text-[#5B3DF5] transition-colors">
                 Biblioteca
               </Link>
               
               {loading ? (
-                <div className="h-9 w-20 bg-slate-100 animate-pulse rounded-md"></div>
+                <div className="h-9 w-20 bg-slate-100/50 animate-pulse rounded-md"></div>
               ) : userEmail ? (
                 <div className="flex items-center gap-4">
                   <span className="text-sm text-slate-600">{userEmail}</span>
@@ -75,7 +83,7 @@ export const Header: React.FC = () => {
               ) : (
                 <Link
                   href="/auth"
-                  className="text-sm font-semibold text-white bg-[#5B3DF5] px-4 py-2 rounded-md hover:bg-[#4A2FD5] transition-colors"
+                  className="text-sm font-semibold text-white bg-[#5B3DF5] px-5 py-2.5 rounded-lg hover:bg-[#4A2FD5] transition-all duration-200 shadow-sm hover:shadow-md"
                 >
                   Sign In
                 </Link>
