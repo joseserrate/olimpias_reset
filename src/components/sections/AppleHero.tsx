@@ -1,13 +1,53 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
 import { NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        // Only apply parallax when section is in view
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          setScrollY(window.scrollY);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Background moves slower (40% of scroll speed)
+  const backgroundOffset = scrollY * 0.4;
+  // Content moves at normal speed but we can make it slightly faster for more depth
+  const contentOffset = scrollY * 0.15;
+
   return (
-    <section className="relative min-h-[100vh] overflow-hidden bg-white">
-      {/* Neural Network Animation - Behind everything */}
-      <NeuralNetworkBackground />
+    <section ref={sectionRef} className="relative min-h-[100vh] overflow-hidden bg-white">
+      {/* Neural Network Animation - Behind everything, slower parallax */}
+      <div 
+        style={{ 
+          transform: `translate3d(0, ${backgroundOffset}px, 0)`,
+          willChange: 'transform'
+        }}
+        className="absolute inset-0"
+      >
+        <NeuralNetworkBackground />
+      </div>
       
-      <div className="relative max-w-[1040px] mx-auto px-6 lg:px-8 z-20" style={{ width: '100%' }}>
+      <div 
+        className="relative max-w-[1040px] mx-auto px-6 lg:px-8 z-20" 
+        style={{ 
+          width: '100%',
+          transform: `translate3d(0, ${-contentOffset}px, 0)`,
+          willChange: 'transform'
+        }}
+      >
         <div className="text-center flex flex-col justify-center min-h-screen py-20" style={{ margin: '0 auto', width: '100%' }}>
           {/* Main Headline */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold leading-[1.05] tracking-[-0.025em]">
