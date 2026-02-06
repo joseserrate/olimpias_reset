@@ -54,13 +54,17 @@ export const Header: React.FC = () => {
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <Image
-                src="/olimpias-logo.png"
-                alt="Olimpias AI"
-                width={300}
-                height={75}
-                className="h-[72px] w-auto"
+                src="/olimpias-icon.png"
+                alt="Olimpias AI Icon"
+                width={48}
+                height={48}
+                className="h-12 w-12"
                 priority
               />
+              <span className="text-2xl font-bold tracking-tight">
+                <span className="text-[#0B0B0D]">OLIMPIAS </span>
+                <span className="text-[#5B3DF5]">AI</span>
+              </span>
             </Link>
             
             <nav className="flex items-center gap-6">
