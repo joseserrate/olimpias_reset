@@ -54,11 +54,11 @@ export const Header: React.FC = () => {
           <div className="flex items-center justify-between">
             <Link href="/" className="hover:opacity-80 transition-opacity">
               <Image
-                src="/olimpias-icon-transparent.png"
+                src="/olimpias-logo-complete.png"
                 alt="Olimpias AI"
-                width={72}
-                height={72}
-                className="h-[72px] w-[72px]"
+                width={256}
+                height={64}
+                className="h-[64px] w-auto"
                 priority
               />
             </Link>
