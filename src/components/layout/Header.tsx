@@ -50,11 +50,11 @@ export const Header: React.FC = () => {
       )}
       
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-3">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
+            <Link href="/" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
               <Image
-                src="/olimpias-icon.png"
+                src="/olimpias-icon-transparent.png"
                 alt="Olimpias AI Icon"
                 width={60}
                 height={60}
@@ -64,9 +64,9 @@ export const Header: React.FC = () => {
               <Image
                 src="/olimpias-wordmark-transparent.png"
                 alt="OLIMPIAS AI"
-                width={171}
-                height={52}
-                className="h-[52px] w-auto"
+                width={132}
+                height={40}
+                className="h-[40px] w-auto"
                 priority
               />
             </Link>
