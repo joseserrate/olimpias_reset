@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
                 priority
               />
               <Image
-                src="/olimpias-wordmark.png"
+                src="/olimpias-wordmark-transparent.png"
                 alt="OLIMPIAS AI"
                 width={171}
                 height={52}

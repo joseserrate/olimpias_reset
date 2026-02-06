@@ -55,9 +55,9 @@ export const AppleHero: React.FC = () => {
             <Image
               src="/olimpias-icon.png"
               alt="Olimpias AI"
-              width={80}
-              height={80}
-              className="h-20 w-20"
+              width={320}
+              height={320}
+              className="h-80 w-80"
               priority
             />
           </div>
