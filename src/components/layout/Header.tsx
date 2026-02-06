@@ -58,13 +58,17 @@ export const Header: React.FC = () => {
                 alt="Olimpias AI Icon"
                 width={48}
                 height={48}
-                className="h-12 w-12"
+                className="h-12 w-12 flex-shrink-0"
                 priority
               />
-              <span className="text-2xl font-bold tracking-tight">
-                <span className="text-[#0B0B0D]">OLIMPIAS </span>
-                <span className="text-[#5B3DF5]">AI</span>
-              </span>
+              <Image
+                src="/olimpias-wordmark.png"
+                alt="OLIMPIAS AI"
+                width={120}
+                height={36}
+                className="h-9 w-auto"
+                priority
+              />
             </Link>
             
             <nav className="flex items-center gap-6">
