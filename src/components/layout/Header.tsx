@@ -66,7 +66,7 @@ export const Header: React.FC = () => {
                 alt="OLIMPIAS AI"
                 width={198}
                 height={60}
-                className="h-[60px] w-auto -ml-[2px]"
+                className="h-[60px] w-auto -ml-[6px]"
                 priority
               />
             </Link>
