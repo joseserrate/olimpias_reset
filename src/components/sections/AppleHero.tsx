@@ -28,7 +28,7 @@ export const AppleHero: React.FC = () => {
   const contentOffset = scrollY * 0.15;
 
   return (
-    <section ref={sectionRef} className="relative min-h-[100vh] overflow-hidden bg-white">
+    <section ref={sectionRef} className="relative min-h-[80vh] overflow-hidden bg-white">
       {/* Neural Network Animation - Behind everything, slower parallax */}
       <div 
         style={{ 
@@ -48,7 +48,7 @@ export const AppleHero: React.FC = () => {
           willChange: 'transform'
         }}
       >
-        <div className="text-center flex flex-col justify-center min-h-screen py-20" style={{ margin: '0 auto', width: '100%' }}>
+        <div className="text-center flex flex-col justify-center min-h-[80vh] py-16" style={{ margin: '0 auto', width: '100%' }}>
           {/* Main Headline */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold leading-[1.05] tracking-[-0.025em]">
             <span className="block">
