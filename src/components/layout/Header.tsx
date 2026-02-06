@@ -64,9 +64,9 @@ export const Header: React.FC = () => {
               <Image
                 src="/olimpias-wordmark-transparent.png"
                 alt="OLIMPIAS AI"
-                width={159}
-                height={48}
-                className="h-[48px] w-auto"
+                width={179}
+                height={54}
+                className="h-[54px] w-auto"
                 priority
               />
             </Link>
