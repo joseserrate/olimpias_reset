@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
@@ -49,6 +50,18 @@ export const AppleHero: React.FC = () => {
         }}
       >
         <div className="text-center flex flex-col justify-center min-h-screen py-20" style={{ margin: '0 auto', width: '100%' }}>
+          {/* Logo Icon */}
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/olimpias-icon.png"
+              alt="Olimpias AI"
+              width={80}
+              height={80}
+              className="h-20 w-20"
+              priority
+            />
+          </div>
+          
           {/* Main Headline */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold leading-[1.05] tracking-[-0.025em]">
             <span className="block">
