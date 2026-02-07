@@ -109,11 +109,18 @@ export default function CasosPage() {
       return;
     }
 
+    // Get current user session
+    let userId: string | null = null;
+    if (isSupabaseConfigured) {
+      const { data: { session } } = await supabase.auth.getSession();
+      userId = session?.user?.id || null;
+    }
+
     const newCase: Partial<Case> = {
       ...formData,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
-      owner_id: null,
+      owner_id: userId,
     };
 
     if (isSupabaseConfigured) {
@@ -125,7 +132,7 @@ export default function CasosPage() {
 
       if (error) {
         console.error('Error creating case:', error);
-        alert('Error creating case');
+        alert(`Error creating case: ${error.message}`);
         return;
       }
 
