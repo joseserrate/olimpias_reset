@@ -80,12 +80,17 @@ export const Header: React.FC = () => {
                 <div className="h-9 w-20 bg-slate-100/50 animate-pulse rounded-md"></div>
               ) : userEmail ? (
                 <div className="flex items-center gap-4">
-                  <span className="text-sm text-slate-600">{userEmail}</span>
+                  <Link 
+                    href="/profile"
+                    className="text-sm text-slate-600 hover:text-[#5B3DF5] transition-colors font-medium"
+                  >
+                    {userEmail}
+                  </Link>
                   <button
                     onClick={handleSignOut}
                     className="text-sm font-medium text-slate-600 hover:text-[#5B3DF5] transition-colors"
                   >
-                    Sign Out
+                    Cerrar Sesión
                   </button>
                 </div>
               ) : (
@@ -93,7 +98,7 @@ export const Header: React.FC = () => {
                   href="/auth"
                   className="text-sm font-semibold text-white bg-[#5B3DF5] px-5 py-2.5 rounded-lg hover:bg-[#4A2FD5] transition-all duration-200 shadow-sm hover:shadow-md"
                 >
-                  Sign In
+                  Iniciar Sesión
                 </Link>
               )}
             </nav>
