@@ -25,8 +25,9 @@ const categoryLabels: Record<CaseCategory, string> = {
   gobierno: 'Gobierno',
 };
 
-export default function CaseDetailPage({ params }: { params: { id: string } }) {
+export default function CaseDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
+  const resolvedParams = React.use(params);
   const [caso, setCaso] = useState<Case | null>(null);
   const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
@@ -42,7 +43,7 @@ export default function CaseDetailPage({ params }: { params: { id: string } }) {
   useEffect(() => {
     loadCase();
     checkAuth();
-  }, [params.id]);
+  }, [resolvedParams.id]);
 
   const checkAuth = async () => {
     if (!isSupabaseConfigured) return;
@@ -57,18 +58,18 @@ export default function CaseDetailPage({ params }: { params: { id: string } }) {
       const { data, error } = await supabase
         .from('cases')
         .select('*')
-        .eq('id', params.id)
+        .eq('id', resolvedParams.id)
         .single();
 
       if (error) {
         console.error('Error loading case:', error);
-        const mockCase = mockCases.find((c) => c.id === params.id);
+        const mockCase = mockCases.find((c) => c.id === resolvedParams.id);
         setCaso(mockCase || null);
       } else {
         setCaso(data);
       }
     } else {
-      const mockCase = mockCases.find((c) => c.id === params.id);
+      const mockCase = mockCases.find((c) => c.id === resolvedParams.id);
       setCaso(mockCase || null);
     }
 
