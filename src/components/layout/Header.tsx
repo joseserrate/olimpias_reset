@@ -84,7 +84,7 @@ export const Header: React.FC = () => {
                     href="/profile"
                     className="text-sm text-slate-600 hover:text-[#5B3DF5] transition-colors font-medium"
                   >
-                    {userEmail}
+                    Perfil
                   </Link>
                   <button
                     onClick={handleSignOut}
