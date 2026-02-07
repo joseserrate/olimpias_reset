@@ -1,11 +1,9 @@
 import { AppleHero } from '@/components/sections/AppleHero';
-import { SupabaseConnectionTest } from '@/components/SupabaseConnectionTest';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <main>
-      <SupabaseConnectionTest />
       <AppleHero />
       
       {/* Simple CTA Section */}
